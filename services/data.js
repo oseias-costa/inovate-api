@@ -47,4 +47,4 @@ function removeData(collection, data) {
   return data;
 }
 
-module.exports = { getData, newData, updateData, removeData };
+module.exports = { getData, newData, updateData, removeData, db };

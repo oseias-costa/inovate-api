@@ -1,4 +1,4 @@
-module.exports = `
+module.exports = `#graphql
   type Task {
     ano: Int
     atividade: String
@@ -14,16 +14,7 @@ module.exports = `
   }
 
   type Query {
-    tasks(
-      status: String
-      responsible: String
-      month: String
-      year: Int
-      frequency: String
-      company: String
-      page: Int
-    ): [Task]
-    tasks: [Task]
+    allTasks(status: String): [Task]
   }
 
   type Mutation {

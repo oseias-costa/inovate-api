@@ -1,6 +1,7 @@
 const { newData, updateData, removeData, getData } = require("../services/data");
 const pagination = require("../utils/pagination");
 const filterTasks = require("../utils/filterTasks");
+const { filtered } = require("../utils/filterTasks2");
 const ItemForSelect = require("../utils/ItemForSelect")
 
 let los = [];
@@ -13,7 +14,7 @@ module.exports = {
                 const filter = await filterTasks(los, args);
                 return pagination(filter, args.page, 5);
             }
-            return filterList();
+            return los;
         },
         loItemsFilter(_, args){            
             async function listItemsFilter() {

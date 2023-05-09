@@ -1,4 +1,6 @@
 const express = require("express");
+const dotenv = require('dotenv')
+dotenv.config()
 const { ApolloServer, gql } = require("apollo-server-express");
 const app = express();
 const http = require("http");
@@ -13,6 +15,7 @@ const resolvers = mergeResolvers(resolverFiles)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 let apolloServer = null;
 async function startServer() {
